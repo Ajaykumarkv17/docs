@@ -82,6 +82,30 @@ If the deployment is successful, you should see the following:
   <img src="/images/checks-passed.png" style={{ borderRadius: '0.5rem' }} />
 </Frame>
 
+## Chat Widget Integration
+
+To add a chat widget to your documentation, you can configure it in your `mint.json` file. Add the following to your configuration:
+
+```json
+{
+  "chat": {
+    "provider": "your-provider-name",
+    "apiKey": "your-api-key"
+  }
+}
+```
+
+Currently supported chat providers include:
+- OpenAI
+- Intercom
+- Custom iframe integrations
+
+After adding the configuration, the chat widget will automatically appear in the bottom right corner of your documentation when you run `mintlify dev` locally or deploy your site.
+
+<Tip>
+  Make sure to never commit your API keys directly in the `mint.json` file. Use environment variables for sensitive information.
+</Tip>
+
 ## Code Formatting
 
 We suggest using extensions on your IDE to recognize and format MDX. If you're a VSCode user, consider the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting, and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting.
