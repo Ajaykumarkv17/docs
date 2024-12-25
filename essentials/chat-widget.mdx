@@ -1,0 +1,96 @@
+---
+title: 'Adding a Chat Widget'
+description: 'Learn how to integrate and customize the chat widget in your application'
+---
+
+# Adding a Chat Widget to Your Application
+
+This guide will walk you through the process of adding a chat widget to your application.
+
+## Installation
+
+First, install the chat widget package using npm or yarn:
+
+```bash
+npm install @yourcompany/chat-widget
+# or
+yarn add @yourcompany/chat-widget
+```
+
+## Basic Implementation
+
+Add the chat widget to your application with just a few lines of code:
+
+```javascript
+import { ChatWidget } from '@yourcompany/chat-widget';
+
+function App() {
+  return (
+    <div>
+      <ChatWidget
+        apiKey="your-api-key"
+        theme="light"
+      />
+    </div>
+  );
+}
+```
+
+## Configuration Options
+
+The chat widget can be customized with various props:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `apiKey` | string | Required | Your API key for authentication |
+| `theme` | 'light' \| 'dark' | 'light' | Widget theme color scheme |
+| `position` | 'bottom-right' \| 'bottom-left' | 'bottom-right' | Widget position on screen |
+| `initialMessage` | string | undefined | Welcome message to display |
+
+## Styling
+
+You can customize the appearance of the chat widget using CSS:
+
+```css
+.chat-widget {
+  /* Custom styles */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+```
+
+## Events and Callbacks
+
+Listen to chat events:
+
+```javascript
+<ChatWidget
+  apiKey="your-api-key"
+  onMessage={(message) => {
+    console.log('New message:', message);
+  }}
+  onOpen={() => {
+    console.log('Chat widget opened');
+  }}
+  onClose={() => {
+    console.log('Chat widget closed');
+  }}
+/>
+```
+
+## Best Practices
+
+1. Always initialize the widget with your API key
+2. Test the widget across different screen sizes
+3. Consider implementing a loading state while the widget initializes
+4. Handle error states appropriately
+
+## Troubleshooting
+
+Common issues and their solutions:
+
+- **Widget not appearing**: Verify your API key is correct
+- **Styling conflicts**: Check for CSS specificity issues
+- **Connection errors**: Ensure proper network connectivity
+
+For more detailed information, please refer to our [API Reference](/api-reference/chat-widget).

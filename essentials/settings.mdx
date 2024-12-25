@@ -316,3 +316,25 @@ Example: `mintlify`
   A background image to be displayed behind every page. See example with
   [Infisical](https://infisical.com/docs) and [FRPC](https://frpc.io).
 </ResponseField>
+
+<ResponseField name="chat" type="Chat">
+  Add a chat widget to your documentation site.
+  <Expandable title="Chat">
+    <ResponseField name="provider" type="string" required>
+      The chat widget provider. Currently supported providers: "intercom"
+    </ResponseField>
+    <ResponseField name="providerKey" type="string" required>
+      The API key or identifier from your chat widget provider.
+    </ResponseField>
+  </Expandable>
+
+  Example:
+  ```json
+  {
+    "chat": {
+      "provider": "intercom",
+      "providerKey": "abc123"
+    }
+  }
+  ```
+</ResponseField>
